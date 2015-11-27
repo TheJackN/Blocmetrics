@@ -8,6 +8,21 @@
     <% end %>
   </div>
   <br />
+  <div class="row">
+    <div clas="col-md-8">
+      <ul class="list-group"><h3 class="media-heading"><u>Application Events</u></h3>
+        <% if @events.blank? %>
+          <h4>No Events Have Been Recieved Yet<h4>
+        <% else %>
+          <% @events.each do |name, events| %>
+              <li class="list-group-item">
+                <span class="badge"><%= events.count %></span>
+                <%= name %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
   <div class="text-center">
     <% if policy(@registered_application).destroy? %>
       <%= link_to "Edit Application URL", edit_registered_application_path(@registered_application), class: 'btn btn-primary' %>

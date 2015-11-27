@@ -1,0 +1,19 @@
+<div class="container">
+  <br />
+  <h2 class="media-heading">Register a New Application</h2>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-4">
+      <h4><u>How To Register Your App</u></h4>
+      <ul>
+        <li>Enter Your Application's Root URL</li>
+        <li>Make Sure The URL Entered Begins with "http://"</li>
+        <li>Entering an Incorrect or Improperly Formatted URL Will Prevent the API from Working</li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <%= render partial: 'form', locals: { registered_application: @registered_application } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<h2 class="text-center"><strong><%= @registered_application.name %></strong></h2>
+<div class="jumbotron">
+  <div class="text-center">
+    <h3><u><%= @registered_application.url %></u></h3>
+    <br />
+    <%= link_to @registered_application.url do %>
+      <%= image_tag('http://lorempixel.com/output/abstract-q-g-800-500-6.jpg') %>
+    <% end %>
+  </div>
+  <br />
+  <div class="text-center">
+    <% if policy(@registered_application).destroy? %>
+      <%= link_to "Edit Application URL", edit_registered_application_path(@registered_application), class: 'btn btn-primary' %>
+      <%= link_to "Unregister Application", @registered_application, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to unregister your application?'} %>
+    <% end %>
+  </div>
+</div>

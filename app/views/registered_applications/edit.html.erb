@@ -1,0 +1,15 @@
+<h2 class="text-center">Edit Registered Application</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>Things to Remember</p>
+    <ul>
+      <li>Enter Your Application's Root URL</li>
+      <li>Make Sure The URL Entered Begins with "http://"</li>
+      <li>Entering the wrong URL will break your existing API</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= render partial: 'form', locals: { registered_application: @registered_application } %>
+  </div>
+</div>

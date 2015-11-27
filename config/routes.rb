@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  resources :registered_applications
+
   root to: 'home#index'
 
   get 'about' => 'home#about'

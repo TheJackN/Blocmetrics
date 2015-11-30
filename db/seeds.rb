@@ -22,6 +22,12 @@ users = User.all
   )
 end
 
+test_app = RegisteredApplication.create!(
+  name: 'Registered Application',
+  url: 'http://registered_application.com',
+  user: tester
+)
+
 apps = RegisteredApplication.all
 
 events = []

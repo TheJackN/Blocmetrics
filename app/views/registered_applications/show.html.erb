@@ -1,3 +1,4 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <h2 class="text-center"><strong><%= @registered_application.name %></strong></h2>
 <div class="jumbotron">
   <div class="text-center">
@@ -13,14 +14,17 @@
       <ul class="list-group"><h3 class="media-heading"><u>Application Events</u></h3>
         <% if @events.blank? %>
           <h4>No Events Have Been Recieved Yet<h4>
+          </ul>
         <% else %>
           <% @events.each do |name, events| %>
               <li class="list-group-item">
                 <span class="badge"><%= events.count %></span>
                 <%= name %></li>
           <% end %>
+        </ul>
+          <%= pie_chart @registered_application.events.group(:name).count %>
+          <br />
         <% end %>
-      </ul>
     </div>
   </div>
   <div class="text-center">

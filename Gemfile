@@ -66,3 +66,5 @@ gem 'pundit'
 gem "simple_form"
 
 gem 'bootstrap-sass'
+# Used for easy graph generation
+gem 'chartkick'

@@ -1,2 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<br>
+<div class="jumbotron">
+  <h1>Blocmetrics</h1>
+  <p>Blocmetrics is an easy to use application event tracking tool!</p>
+  <p>
+    <%= link_to "Sign In", new_user_session_path %> or
+    <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h2>Keep track of your metrics!</h2>
+    <p>Easily keep track of your SAAS application's most important metrics with our automated API custom tailered to your application.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Free To Use</h2>
+    <p>Blocmetrics free for everyone, everywhere!</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Easy to Use</h2>
+    <p>Just add our javascript API file to your back-end and we take care of the rest. The API automatically collects data that you can then view any time from your personalized application dashboard!</p>
+  </div>
+</div>

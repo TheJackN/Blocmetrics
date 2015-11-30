@@ -1,2 +1,56 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2>My Profile</h2>
+<br />
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="text text-center"><u>Account Info</u></h4>
+      </div>
+      <div class="panel-body">
+        <div class="text text-center">
+          <br />
+          <p><strong>Name:</strong> <%= @user.name %></p>
+          <p><strong>Email:</strong> <%= @user.email %></p>
+          <p><%= link_to 'Edit Profile Info', edit_user_registration_path, class: 'btn btn-success' %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8" style="float:right">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="text text-center"><u>Add this code to your JS library</u></h4>
+      </div>
+      <div class="panel-body">
+        <pre>
+          <code>var blocmetrics = {};
+            blocmetrics.report = function(YOUREVENTNAME){
+              var event = {event: { name: YOUREVENTNAME }};
+              var request = new XMLHttpRequest();
+              request.open("POST", "http://blocmetrics.awesome.yea", true);
+              request.setRequestHeader('Content-Type', 'application/json');
+              request.send(JSON.stringify(event));
+            }</code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 class="text text-center">My Applications</h2>
+<br />
+  <% if @user.registered_applications.nil? %>
+    <h3>No Applications Registered Yet!</h3>
+  <% else %>
+    <% @user.registered_applications.each do |app| %>
+      <div class="media-heading">
+        <h4 class="text-left"><u><%= link_to app.name, app %></u></h4>
+      </div>
+    <% end %>
+  <% end %>
+<br />
+<br />
+<% if policy(RegisteredApplication.new).create? %>
+  <div class="text-right">
+    <%= link_to "New Application", new_registered_application_path, class: 'btn btn-success' %>
+  </div>
+<% end %>
